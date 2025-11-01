@@ -232,7 +232,7 @@ if "rank" in detail and "date_start" in detail:
     fig = px.line(detail.dropna(subset=["rank"]), x="date_start", y="rank", markers=True,
                   title=f"Rank timeline – {detail_name}",
                   labels={"date_start":"Date","rank":"Rank"})
-    fig.update_yaxes(autorange="reversed")
+
     st.plotly_chart(fig, use_container_width=True)
 
 st.caption("Files auto-loaded: " + ", ".join(sorted({os.path.basename(n) for n,_ in disk_files})) if disk_files else "None")
