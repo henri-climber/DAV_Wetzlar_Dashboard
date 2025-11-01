@@ -202,8 +202,7 @@ st.subheader("Athlete Leaderboard (within current filter)")
 agg = (
     dfv.groupby("name", as_index=False)
        .agg(
-           competitions=("event_name","nunique"),
-           starts=("event_name","size"),
+           competitions_attended=("event_name","size"),
            average_rank=("rank","mean"),
            best_rank=("rank","min"),
            podiums=("podium","sum"),
