@@ -211,7 +211,7 @@ agg = (
 )
 if not agg.empty:
     agg["average_rank"] = agg["average_rank"].round(2)
-    agg = agg.sort_values(by=["average_rank","best_rank","competitions_attended"], ascending=[True, True, False])
+    agg = agg.sort_values(by=["competitions_attended", "average_rank","best_rank",], ascending=[False, True, True])
 st.dataframe(agg, use_container_width=True)
 
 st.markdown("---")
